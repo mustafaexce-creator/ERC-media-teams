@@ -129,6 +129,12 @@
       display: none
     }
 
+    .hero-logo {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 24px
+    }
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -1048,69 +1054,220 @@
 
     @media(max-width:640px) {
       .form-hero {
-        padding: var(--space-10) var(--space-5) var(--space-16)
+        padding: var(--space-8) var(--space-4) var(--space-12)
       }
 
       .form-hero h1 {
         font-family: var(--font-heading);
-        font-size: var(--text-3xl);
+        font-size: var(--text-xl);
         font-weight: 800;
-        line-height: 1.3;
-        margin-bottom: var(--space-6);
+        line-height: 1.4;
+        margin-bottom: var(--space-4);
         color: #1A1614;
         animation: fadeInUp 0.6s var(--ease-out) 0.1s both
       }
 
+      .form-hero h1 span {
+        font-size: var(--text-sm);
+        margin-top: var(--space-2)
+      }
+
       .hero-description {
-        font-size: var(--text-base);
-        line-height: 1.9;
-        max-width: 680px;
-        margin: 0 auto;
+        font-size: var(--text-sm);
+        line-height: 1.8;
+        max-width: 100%;
+        padding: 0 var(--space-2);
         color: #5C524A;
         animation: fadeInUp 0.6s var(--ease-out) 0.2s both
       }
 
-      .progress-bar-wrapper {
-        padding: var(--space-4) var(--space-3);
-        overflow-x: auto
+      .hero-badge {
+        font-size: 11px;
+        padding: var(--space-1) var(--space-3);
+        margin-bottom: var(--space-3)
       }
 
-      .step-line {
-        width: 24px
-      }
-
-      .step-label {
-        font-size: 10px
-      }
-
-      .step-circle {
-        width: 32px;
-        height: 32px;
-        font-size: var(--text-xs)
-      }
-
-      .form-section {
-        padding: var(--space-6) var(--space-5)
-      }
-
-      .form-nav {
-        padding: var(--space-4) var(--space-5)
-      }
-
-      .section-header h2 {
-        font-size: var(--text-lg)
+      .hero-logo {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 16px
       }
 
       .form-container {
-        padding: 0 var(--space-4)
+        padding: 0 var(--space-3);
+        margin-top: -28px
+      }
+
+      .progress-bar-wrapper {
+        padding: var(--space-3) var(--space-2);
+        margin-bottom: var(--space-4);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch
+      }
+
+      .step-line {
+        width: 16px;
+        margin: 0 2px;
+        margin-bottom: 18px
+      }
+
+      .step-label {
+        font-size: 9px
+      }
+
+      .step-circle {
+        width: 28px;
+        height: 28px;
+        font-size: 11px
+      }
+
+      .step-circle svg {
+        width: 14px;
+        height: 14px
+      }
+
+      .form-card {
+        border-radius: var(--radius-md)
+      }
+
+      .form-section {
+        padding: var(--space-5) var(--space-4)
+      }
+
+      .section-header {
+        margin-bottom: var(--space-6);
+        padding-bottom: var(--space-4)
+      }
+
+      .section-header h2 {
+        font-size: var(--text-base)
+      }
+
+      .section-header p {
+        font-size: var(--text-xs)
+      }
+
+      .section-icon {
+        width: 36px;
+        height: 36px;
+        margin-bottom: var(--space-3)
+      }
+
+      .section-icon i {
+        width: 18px;
+        height: 18px
+      }
+
+      .field-group {
+        margin-bottom: var(--space-5)
+      }
+
+      .field-label {
+        font-size: var(--text-sm);
+        margin-bottom: var(--space-2)
+      }
+
+      .input-base {
+        padding: var(--space-3) var(--space-4);
+        font-size: var(--text-sm)
+      }
+
+      textarea.input-base {
+        min-height: 100px
+      }
+
+      .form-nav {
+        padding: var(--space-3) var(--space-4);
+        gap: var(--space-2)
+      }
+
+      .btn {
+        padding: var(--space-3) var(--space-5);
+        font-size: var(--text-sm)
+      }
+
+      .btn-submit {
+        width: 100%
       }
 
       .yes-no-group {
         flex-direction: column
       }
 
+      .yes-no-option {
+        width: 100%
+      }
+
+      .radio-option {
+        padding: var(--space-3) var(--space-4);
+        font-size: var(--text-sm)
+      }
+
       .team-grid {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
+        gap: var(--space-3)
+      }
+
+      .team-card {
+        padding: var(--space-3) var(--space-4)
+      }
+
+      .team-card-icon {
+        width: 36px;
+        height: 36px
+      }
+
+      .team-card-icon i {
+        width: 18px;
+        height: 18px
+      }
+
+      .team-card-text h3 {
+        font-size: var(--text-sm)
+      }
+
+      .team-card-text p {
+        font-size: 10px
+      }
+
+      .team-card-check {
+        width: 20px;
+        height: 20px
+      }
+
+      .team-card-check i {
+        width: 12px;
+        height: 12px
+      }
+
+      .success-page {
+        padding: var(--space-10) var(--space-4)
+      }
+
+      .success-page h2 {
+        font-size: var(--text-xl)
+      }
+
+      .success-icon-wrap {
+        width: 72px;
+        height: 72px
+      }
+
+      .success-icon-wrap i {
+        width: 36px;
+        height: 36px
+      }
+
+      .success-details {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--space-4);
+        gap: var(--space-2)
+      }
+
+      .form-footer p {
+        font-size: 10px;
+        padding: var(--space-3)
       }
     }
 
@@ -1125,7 +1282,7 @@
     <!-- Hero Section -->
     <header class="form-hero">
       <div style="max-width: 680px; margin: 0 auto;">
-        <div style="width: 140px; height: 140px; margin: 0 auto 24px;">
+        <div class="hero-logo">
           <img src="logo.png" alt="شعار الهلال الأحمر المصري" style="width: 100%; height: 100%; object-fit: contain;">
         </div>
         <div class="hero-badge"><i data-lucide="heart"></i> باب التطوع مفتوح الآن</div>
