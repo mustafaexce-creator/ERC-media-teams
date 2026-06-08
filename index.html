@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>انضم لفريق الميديا - الهلال الأحمر المصري بالمنوفية</title>
+  <meta name="description"
+    content="استمارة تسجيل المتطوعين في فريق الميديا بالهلال الأحمر المصري. انضم لنا وساهم في إبراز الجهود الإنسانية.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      --color-bg: #E3000F;
+      --color-bg-card: #FFFFFF;
+      --color-bg-section: #F5F0EA;
+      --color-bg-input: #FAF8F5;
+      --color-border: #E8E0D6;
+      --color-border-focus: #E3000F;
+      --color-text-primary: #1A1614;
+      --color-text-secondary: #5C524A;
+      --color-text-muted: #8A7F76;
+      --color-text-on-primary: #FFFAF5;
+      --color-primary: #E3000F;
+      --color-primary-hover: #C6000C;
+      --color-primary-light: #FDE8EC;
+      --color-accent: #D4634A;
+      --color-accent-light: #FBEAE6;
+      --color-success: #16803C;
+      --color-success-light: #DCFCE7;
+      --color-error: #DC2626;
+      --color-error-light: #FEE2E2;
+      --font-heading: 'Cairo', sans-serif;
+      --font-body: 'Tajawal', sans-serif;
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.25rem;
+      --text-xl: 1.5rem;
+      --text-2xl: 2rem;
+      --text-3xl: 2.5rem;
+      --text-4xl: 3.5rem;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --space-10: 40px;
+      --space-12: 48px;
+      --space-16: 64px;
+      --space-20: 80px;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-xl: 20px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 3px rgba(26, 22, 20, 0.06);
+      --shadow-md: 0 4px 12px rgba(26, 22, 20, 0.08);
+      --shadow-lg: 0 8px 24px rgba(26, 22, 20, 0.10);
+      --shadow-focus: 0 0 0 3px rgba(227, 0, 15, 0.15);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --duration-fast: 150ms;
+      --duration-normal: 300ms
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      color: var(--color-text-primary);
+      background: var(--color-bg);
+      line-height: 1.7;
+      direction: rtl;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0
+    }
+
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column
+    }
+
+    /* Hero */
+    .form-hero {
+      background: #FFFFFF;
+      color: #1A1614;
+      padding: var(--space-16) var(--space-6) var(--space-16);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      border-bottom: 1px solid #E8E0D6
+    }
+
+    .form-hero::before {
+      display: none
+    }
+
+    .form-hero::after {
+      display: none
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: #FDE8EC;
+      border: 1px solid #F9D0D8;
+      border-radius: var(--radius-full);
+      padding: var(--space-2) var(--space-5);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      margin-bottom: var(--space-4);
+      color: #E3000F
+    }
+
+    .hero-badge i {
+      width: 16px;
+      height: 16px;
+      opacity: 0.8
+    }
+
+    .hero-crescent {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto var(--space-6);
+      opacity: 0;
+      animation: fadeInUp 0.6s var(--ease-out) 0.2s forwards
+    }
+
+    .form-hero h1 {
+      font-family: var(--font-heading);
+      font-size: var(--text-3xl);
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: var(--space-6);
+      color: #1A1614;
+      animation: fadeInUp 0.6s var(--ease-out) 0.1s both
+    }
+
+    .form-hero h1 span {
+      display: block;
+      font-size: var(--text-lg);
+      font-weight: 700;
+      margin-top: var(--space-4);
+      color: #E3000F
+    }
+
+    .hero-description {
+      font-size: var(--text-base);
+      line-height: 1.9;
+      max-width: 680px;
+      margin: 0 auto;
+      color: #5C524A;
+      animation: fadeInUp 0.6s var(--ease-out) 0.2s both
+    }
+
+    /* Container */
+    .form-container {
+      max-width: 780px;
+      margin: -40px auto var(--space-16);
+      padding: 0 var(--space-6);
+      position: relative;
+      z-index: 2
+    }
+
+    /* Progress */
+    .progress-bar-wrapper {
+      background: var(--color-bg-card);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6) var(--space-8);
+      margin-bottom: var(--space-8);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border)
+    }
+
+    .progress-steps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      direction: ltr
+    }
+
+    .progress-step {
+      display: flex;
+      align-items: center;
+      color: var(--color-text-primary)
+    }
+
+    .step-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-2);
+      cursor: default
+    }
+
+    .step-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: var(--text-sm);
+      background: var(--color-bg-section);
+      color: var(--color-text-muted);
+      border: 2px solid var(--color-border);
+      transition: all var(--duration-normal) var(--ease-out);
+      z-index: 1
+    }
+
+    .step-circle svg {
+      width: 18px;
+      height: 18px
+    }
+
+    .step-label {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      color: var(--color-text-muted);
+      transition: color var(--duration-normal) var(--ease-out);
+      white-space: nowrap
+    }
+
+    .step-line {
+      width: 48px;
+      height: 2px;
+      background: var(--color-border);
+      margin: 0 var(--space-2);
+      margin-bottom: 20px;
+      transition: background var(--duration-normal) var(--ease-out);
+      flex-shrink: 0
+    }
+
+    .step-indicator.active .step-circle {
+      background: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 4px rgba(227, 0, 15, 0.15)
+    }
+
+    .step-indicator.active .step-label {
+      color: var(--color-primary);
+      font-weight: 600
+    }
+
+    .step-indicator.completed .step-circle {
+      background: #22C55E;
+      color: white;
+      border-color: #22C55E
+    }
+
+    .step-indicator.completed .step-label {
+      color: #22C55E
+    }
+
+    .step-line.completed {
+      background: #22C55E
+    }
+
+    /* Form Card & Sections */
+    .form-card {
+      background: var(--color-bg-card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border);
+      overflow: hidden
+    }
+
+    .form-section {
+      display: none;
+      padding: var(--space-10) var(--space-8);
+      animation: sectionIn 0.5s var(--ease-out)
+    }
+
+    .form-section.active {
+      display: block
+    }
+
+    .section-header {
+      margin-bottom: var(--space-10);
+      padding-bottom: var(--space-6);
+      border-bottom: 2px solid var(--color-bg-section)
+    }
+
+    .section-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-4)
+    }
+
+    .section-icon i {
+      width: 24px;
+      height: 24px
+    }
+
+    .section-icon.red {
+      background: var(--color-primary-light);
+      color: var(--color-primary)
+    }
+
+    .section-icon.orange {
+      background: var(--color-accent-light);
+      color: var(--color-accent)
+    }
+
+    .section-icon.blue {
+      background: #E0F2FE;
+      color: #0369A1
+    }
+
+    .section-icon.green {
+      background: var(--color-success-light);
+      color: var(--color-success)
+    }
+
+    .section-header h2 {
+      font-family: var(--font-heading);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-2)
+    }
+
+    .section-header p {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.7
+    }
+
+    /* Fields */
+    .field-group {
+      margin-bottom: var(--space-8);
+      opacity: 0;
+      animation: fadeInUp 0.4s var(--ease-out) forwards
+    }
+
+    .field-group:nth-child(2) {
+      animation-delay: 0.05s
+    }
+
+    .field-group:nth-child(3) {
+      animation-delay: 0.1s
+    }
+
+    .field-group:nth-child(4) {
+      animation-delay: 0.15s
+    }
+
+    .field-group:nth-child(5) {
+      animation-delay: 0.2s
+    }
+
+    .field-group:nth-child(6) {
+      animation-delay: 0.25s
+    }
+
+    .field-group:nth-child(7) {
+      animation-delay: 0.3s
+    }
+
+    .field-group:nth-child(8) {
+      animation-delay: 0.35s
+    }
+
+    .field-group:last-child {
+      margin-bottom: 0
+    }
+
+    .field-label {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-3);
+      line-height: 1.6
+    }
+
+    .field-label .required {
+      color: var(--color-primary);
+      margin-right: var(--space-1);
+      font-weight: 700
+    }
+
+    .field-label .hint {
+      display: block;
+      font-weight: 400;
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      margin-top: var(--space-1);
+      font-family: var(--font-body)
+    }
+
+    .input-base {
+      width: 100%;
+      padding: var(--space-3) var(--space-4);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text-primary);
+      background: var(--color-bg-input);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      transition: all var(--duration-fast) ease;
+      outline: none;
+      direction: rtl;
+      line-height: 1.6
+    }
+
+    .input-base::placeholder {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm)
+    }
+
+    .input-base:hover {
+      border-color: #C9BFB5
+    }
+
+    .input-base:focus {
+      border-color: var(--color-border-focus);
+      background: var(--color-bg-card);
+      box-shadow: var(--shadow-focus)
+    }
+
+    .input-base.error {
+      border-color: var(--color-error);
+      background: var(--color-error-light)
+    }
+
+    textarea.input-base {
+      min-height: 120px;
+      resize: vertical
+    }
+
+    select.input-base {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%235C524A' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 16px center;
+      padding-left: 40px
+    }
+
+    .field-error {
+      display: none;
+      font-size: var(--text-xs);
+      color: var(--color-error);
+      margin-top: var(--space-2);
+      align-items: center;
+      gap: var(--space-1)
+    }
+
+    .field-error.visible {
+      display: flex
+    }
+
+    .field-error i {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0
+    }
+
+    /* Radio & Options */
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3)
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-4) var(--space-5);
+      background: var(--color-bg-input);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all var(--duration-fast) ease;
+      user-select: none
+    }
+
+    .radio-option:hover {
+      border-color: #C9BFB5;
+      background: var(--color-bg-card)
+    }
+
+    .radio-option input[type="radio"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all var(--duration-fast) ease;
+      flex-shrink: 0;
+      position: relative
+    }
+
+    .radio-option input[type="radio"]:checked {
+      border-color: var(--color-primary);
+      background: var(--color-primary)
+    }
+
+    .radio-option input[type="radio"]:checked::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: var(--radius-full);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    .radio-option.selected {
+      border-color: var(--color-primary);
+      background: var(--color-primary-light)
+    }
+
+    .radio-option .option-text {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-text-primary)
+    }
+
+    /* Team Cards */
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4)
+    }
+
+    .team-card {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      padding: var(--space-5) var(--space-6);
+      background: var(--color-bg-input);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+      transition: all var(--duration-normal) var(--ease-out);
+      user-select: none;
+      position: relative;
+      overflow: hidden
+    }
+
+    .team-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(227, 0, 15, 0.04), transparent);
+      opacity: 0;
+      transition: opacity var(--duration-normal) var(--ease-out)
+    }
+
+    .team-card:hover {
+      border-color: #C9BFB5;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md)
+    }
+
+    .team-card:hover::before {
+      opacity: 1
+    }
+
+    .team-card.selected {
+      border-color: var(--color-primary);
+      background: var(--color-primary-light);
+      box-shadow: var(--shadow-focus)
+    }
+
+    .team-card.selected::before {
+      opacity: 1
+    }
+
+    .team-card input[type="checkbox"] {
+      display: none
+    }
+
+    .team-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .team-card-icon i {
+      width: 24px;
+      height: 24px
+    }
+
+    .team-card-icon.content {
+      background: #FEF3C7;
+      color: #92400E
+    }
+
+    .team-card-icon.design {
+      background: #F3E8FF;
+      color: #7C3AED
+    }
+
+    .team-card-icon.voice {
+      background: #DBEAFE;
+      color: #2563EB
+    }
+
+    .team-card-icon.photo {
+      background: #D1FAE5;
+      color: #059669
+    }
+
+    .team-card-icon.video {
+      background: #FFE4E6;
+      color: #E11D48
+    }
+
+    .team-card-text h3 {
+      font-family: var(--font-heading);
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 2px
+    }
+
+    .team-card-text p {
+      font-size: var(--text-xs);
+      color: var(--color-text-secondary)
+    }
+
+    .team-card-check {
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-full);
+      border: 2px solid var(--color-border);
+      margin-right: auto;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--duration-fast) ease
+    }
+
+    .team-card.selected .team-card-check {
+      background: var(--color-primary);
+      border-color: var(--color-primary)
+    }
+
+    .team-card.selected .team-card-check i {
+      width: 14px;
+      height: 14px;
+      color: white;
+      opacity: 0;
+      transition: opacity var(--duration-fast) ease
+    }
+
+    .team-card-check i {
+      width: 14px;
+      height: 14px;
+      color: white;
+      opacity: 0;
+      transition: opacity var(--duration-fast) ease
+    }
+
+    /* Yes/No */
+    .yes-no-group {
+      display: flex;
+      gap: var(--space-3)
+    }
+
+    .yes-no-option {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-5);
+      background: var(--color-bg-input);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all var(--duration-fast) ease;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-text-secondary)
+    }
+
+    .yes-no-option:hover {
+      border-color: #C9BFB5
+    }
+
+    .yes-no-option input[type="radio"] {
+      display: none
+    }
+
+    .yes-no-option.selected {
+      border-color: var(--color-primary);
+      background: var(--color-primary-light);
+      color: var(--color-primary)
+    }
+
+    .conditional-fields {
+      animation: sectionIn 0.4s var(--ease-out)
+    }
+
+    /* Nav */
+    .form-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-6) var(--space-8);
+      border-top: 1px solid var(--color-border);
+      background: var(--color-bg-card);
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg)
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-6);
+      font-family: var(--font-heading);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      outline: none;
+      line-height: 1.5
+    }
+
+    .btn:focus-visible {
+      box-shadow: var(--shadow-focus)
+    }
+
+    .btn i {
+      width: 18px;
+      height: 18px
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: white
+    }
+
+    .btn-primary:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md)
+    }
+
+    .btn-primary:active {
+      transform: translateY(0) scale(0.98)
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--color-text-secondary);
+      border: 1.5px solid var(--color-border)
+    }
+
+    .btn-secondary:hover {
+      background: var(--color-bg-card);
+      color: var(--color-text-primary);
+      border-color: #C9BFB5
+    }
+
+    .btn-submit {
+      padding: var(--space-4) var(--space-8);
+      font-size: var(--text-base);
+      background: linear-gradient(135deg, var(--color-primary) 0%, #B3000C 100%);
+      color: white;
+      border: none
+    }
+
+    .btn-submit:hover {
+      background: linear-gradient(135deg, var(--color-primary-hover) 0%, #99000A 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(227, 0, 15, 0.3)
+    }
+
+    /* Success */
+    .success-page {
+      display: none;
+      text-align: center;
+      padding: var(--space-16) var(--space-8)
+    }
+
+    .success-page.active {
+      display: block;
+      animation: sectionIn 0.6s var(--ease-out)
+    }
+
+    .success-icon-wrap {
+      width: 96px;
+      height: 96px;
+      border-radius: var(--radius-full);
+      background: var(--color-success-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-8);
+      animation: scaleIn 0.5s var(--ease-out) 0.2s both
+    }
+
+    .success-icon-wrap i {
+      width: 48px;
+      height: 48px;
+      color: var(--color-success)
+    }
+
+    .success-page h2 {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-4);
+      animation: fadeInUp 0.5s var(--ease-out) 0.35s both
+    }
+
+    .success-page .success-msg {
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.9;
+      animation: fadeInUp 0.5s var(--ease-out) 0.5s both
+    }
+
+    .success-details {
+      margin-top: var(--space-10);
+      padding: var(--space-6);
+      background: var(--color-bg-section);
+      border-radius: var(--radius-lg);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      animation: fadeInUp 0.5s var(--ease-out) 0.65s both
+    }
+
+    .success-details i {
+      width: 20px;
+      height: 20px;
+      color: var(--color-primary)
+    }
+
+    .success-details span {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary)
+    }
+
+    .form-footer {
+      text-align: center;
+      padding: var(--space-8) var(--space-6) var(--space-12);
+      color: rgba(255, 255, 255, 0.9);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      letter-spacing: 0.5px
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes sectionIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.5)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: translateX(0)
+      }
+
+      20% {
+        transform: translateX(-6px)
+      }
+
+      40% {
+        transform: translateX(6px)
+      }
+
+      60% {
+        transform: translateX(-4px)
+      }
+
+      80% {
+        transform: translateX(4px)
+      }
+    }
+
+    .shake {
+      animation: shake 0.4s ease
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    .btn-loading .btn-text {
+      opacity: 0
+    }
+
+    .btn-loading::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid rgba(255, 255, 255, 0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      top: 50%;
+      left: 50%;
+      margin-top: -10px;
+      margin-left: -10px
+    }
+
+    .btn-loading {
+      position: relative;
+      pointer-events: none
+    }
+
+    @media(min-width:640px) {
+      .team-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(min-width:768px) {
+      .form-hero h1 {
+        font-family: var(--font-heading);
+        font-size: var(--text-3xl);
+        font-weight: 800;
+        line-height: 1.3;
+        margin-bottom: var(--space-6);
+        color: #1A1614;
+        animation: fadeInUp 0.6s var(--ease-out) 0.1s both
+      }
+
+      .form-hero h1 span {
+        display: block;
+        font-size: var(--text-lg);
+        font-weight: 700;
+        margin-top: var(--space-4);
+        color: #E3000F
+      }
+
+      .hero-description {
+        font-size: var(--text-base);
+        line-height: 1.9;
+        max-width: 680px;
+        margin: 0 auto;
+        color: #5C524A;
+        animation: fadeInUp 0.6s var(--ease-out) 0.2s both
+      }
+
+      .form-section {
+        padding: var(--space-12)
+      }
+
+      .form-nav {
+        padding: var(--space-6) var(--space-12)
+      }
+    }
+
+    @media(max-width:640px) {
+      .form-hero {
+        padding: var(--space-10) var(--space-5) var(--space-16)
+      }
+
+      .form-hero h1 {
+        font-family: var(--font-heading);
+        font-size: var(--text-3xl);
+        font-weight: 800;
+        line-height: 1.3;
+        margin-bottom: var(--space-6);
+        color: #1A1614;
+        animation: fadeInUp 0.6s var(--ease-out) 0.1s both
+      }
+
+      .hero-description {
+        font-size: var(--text-base);
+        line-height: 1.9;
+        max-width: 680px;
+        margin: 0 auto;
+        color: #5C524A;
+        animation: fadeInUp 0.6s var(--ease-out) 0.2s both
+      }
+
+      .progress-bar-wrapper {
+        padding: var(--space-4) var(--space-3);
+        overflow-x: auto
+      }
+
+      .step-line {
+        width: 24px
+      }
+
+      .step-label {
+        font-size: 10px
+      }
+
+      .step-circle {
+        width: 32px;
+        height: 32px;
+        font-size: var(--text-xs)
+      }
+
+      .form-section {
+        padding: var(--space-6) var(--space-5)
+      }
+
+      .form-nav {
+        padding: var(--space-4) var(--space-5)
+      }
+
+      .section-header h2 {
+        font-size: var(--text-lg)
+      }
+
+      .form-container {
+        padding: 0 var(--space-4)
+      }
+
+      .yes-no-group {
+        flex-direction: column
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .hidden {
+      display: none !important
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!-- Hero Section -->
+    <header class="form-hero">
+      <div style="max-width: 680px; margin: 0 auto;">
+        <div style="width: 140px; height: 140px; margin: 0 auto 24px;">
+          <img src="logo.png" alt="شعار الهلال الأحمر المصري" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div class="hero-badge"><i data-lucide="heart"></i> باب التطوع مفتوح الآن</div>
+        <h1>انضم لفريق الميديا<span>بالهلال الأحمر بالمنوفية</span></h1>
+        <p class="hero-description">خلف كل قصة عطاء، هناك عدسة توثق وكلمة تؤثر. في الهلال الأحمر
+          المصري بالمنوفية، نبحث عن المبدعين الذين يملكون الشغف لترجمة العمل الإنساني إلى محتوى يلامس القلوب ويحرك
+          الدعم. شاركنا موهبتك ووقتك لتكون صوتاً لمن لا صوت له.</p>
+      </div>
+    </header>
+    <!-- Form Container -->
+    <main class="form-container">
+      <!-- Progress Bar -->
+      <nav class="progress-bar-wrapper" aria-label="خطوات الاستمارة">
+        <div class="progress-steps">
+          <div class="progress-step">
+            <div class="step-indicator active" data-step="1">
+              <div class="step-circle">1</div>
+              <div class="step-label">البيانات الأساسية</div>
+            </div>
+          </div>
+          <div class="step-line"></div>
+          <div class="progress-step">
+            <div class="step-indicator" data-step="2">
+              <div class="step-circle">2</div>
+              <div class="step-label">الشغف والالتزام</div>
+            </div>
+          </div>
+          <div class="step-line"></div>
+          <div class="progress-step">
+            <div class="step-indicator" data-step="3">
+              <div class="step-circle">3</div>
+              <div class="step-label">اختيار الفريق</div>
+            </div>
+          </div>
+          <div class="step-line"></div>
+          <div class="progress-step">
+            <div class="step-indicator" data-step="4">
+              <div class="step-circle">4</div>
+              <div class="step-label">الأسئلة التخصصية</div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <form id="volunteer-form" novalidate>
+        <div class="form-card">
+          <!-- Step 1: Basic Info -->
+          <section id="step-1" class="form-section active" aria-label="البيانات الأساسية">
+            <div class="section-header">
+              <div class="section-icon red"><i data-lucide="user-circle"></i></div>
+              <h2>البيانات الأساسية</h2>
+              <p>أخبرنا عنك حتى نتمكن من التواصل معك بسهولة.</p>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="full-name"><span class="required">*</span> الاسم الرباعي</label>
+              <input type="text" id="full-name" name="full_name" class="input-base"
+                placeholder="مثال: أحمد محمد علي حسن" required>
+              <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="member-id"><span class="required">*</span> رقم العضوية</label>
+              <input type="text" id="member-id" name="member_id" class="input-base" placeholder="أدخل رقم عضويتك"
+                required>
+              <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="age"><span class="required">*</span> السن</label>
+              <input type="number" id="age" name="age" class="input-base" placeholder="أدخل سنك" min="15" max="80"
+                required>
+              <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="phone"><span class="required">*</span> رقم الهاتف / واتساب<span
+                  class="hint">سيتم التواصل معك عبر هذا الرقم</span></label>
+              <input type="tel" id="phone" name="phone" class="input-base" placeholder="01XXXXXXXXX" required>
+              <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+            </div>
+          </section>
+          <!-- Step 2: Passion & Commitment -->
+          <section id="step-2" class="form-section" aria-label="الشغف والالتزام بالوقت">
+            <div class="section-header">
+              <div class="section-icon orange"><i data-lucide="flame"></i></div>
+              <h2>الشغف والالتزام بالوقت</h2>
+              <p>نريد أن نفهم دوافعك ومدى استعدادك للالتزام معنا في هذه الرحلة الإنسانية.</p>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="why-join"><span class="required">*</span> لماذا اخترت الانضمام لفريق
+                الميديا بالهلال الأحمر المصري تحديداً، وما القيمة التي تعتقد أنك ستضيفها لنا؟</label>
+              <textarea id="why-join" name="why_join" class="input-base" placeholder="شاركنا قصتك ودوافعك..."
+                required></textarea>
+              <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="inspiring-project"><span class="required">*</span> ما هو أكثر مشروع إعلامي
+                أو حملة إنسانية أثرت فيك مؤخراً ولماذا؟</label>
+              <textarea id="inspiring-project" name="inspiring_project" class="input-base"
+                placeholder="حدثنا عن التجربة التي ألهمتك..." required></textarea>
+              <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label"><span class="required">*</span> كم عدد الساعات التي يمكنك تخصيصها أسبوعياً
+                لفريق الميديا؟</label>
+              <div class="radio-group" data-required="true">
+                <label class="radio-option">
+                  <input type="radio" name="weekly_hours" value="less_than_5">
+                  <span class="option-text">أقل من 5 ساعات</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="weekly_hours" value="5_to_10">
+                  <span class="option-text">من 5 إلى 10 ساعات</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="weekly_hours" value="more_than_10">
+                  <span class="option-text">أكثر من 10 ساعات</span>
+                </label>
+              </div>
+              <div class="field-error"><i data-lucide="alert-circle"></i> <span>يرجى اختيار أحد الخيارات</span></div>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="flexibility"><span class="required">*</span> في أوقات الطوارئ أو الحملات
+                الإغاثية، قد نحتاج لجهد مكثف أو استجابة سريعة. ما مدى مرونتك في التعامل مع هذه المواقف؟</label>
+              <textarea id="flexibility" name="flexibility" class="input-base"
+                placeholder="أخبرنا عن مدى مرونتك واستعدادك..." required></textarea>
+              <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="other-commitments"><span class="required">*</span> هل أنت ملتزم حالياً
+                بأعمال تطوعية أو وظائف أخرى قد تؤثر على وجودك معنا؟</label>
+              <input type="text" id="other-commitments" name="other_commitments" class="input-base"
+                placeholder="اذكر التزاماتك الحالية إن وجدت..." required>
+              <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+            </div>
+          </section>
+          <!-- Step 3: Team Selection -->
+          <section id="step-3" class="form-section" aria-label="اختيار الفريق">
+            <div class="section-header">
+              <div class="section-icon blue"><i data-lucide="users"></i></div>
+              <h2>اختر الفريق الأنسب</h2>
+              <p>اختر الفريق الذي يتناسب مع مهاراتك وشغفك. يمكنك اختيار أكثر من فريق.</p>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label"><span class="required">*</span> حدد الفريق الرئيسي الذي ترغب في الانضمام
+                إليه</label>
+              <div class="team-grid">
+                <label class="team-card" tabindex="0" role="checkbox" aria-checked="false">
+                  <input type="checkbox" name="team" value="content">
+                  <div class="team-card-icon content"><i data-lucide="pen-tool"></i></div>
+                  <div class="team-card-text">
+                    <h3>صناعة المحتوى</h3>
+                    <p>Content Writing</p>
+                  </div>
+                  <div class="team-card-check"><i data-lucide="check"></i></div>
+                </label>
+
+                <label class="team-card" tabindex="0" role="checkbox" aria-checked="false">
+                  <input type="checkbox" name="team" value="design">
+                  <div class="team-card-icon design"><i data-lucide="palette"></i></div>
+                  <div class="team-card-text">
+                    <h3>التصميم الجرافيكي</h3>
+                    <p>Graphic Design</p>
+                  </div>
+                  <div class="team-card-check"><i data-lucide="check"></i></div>
+                </label>
+
+                <label class="team-card" tabindex="0" role="checkbox" aria-checked="false">
+                  <input type="checkbox" name="team" value="voice">
+                  <div class="team-card-icon voice"><i data-lucide="mic"></i></div>
+                  <div class="team-card-text">
+                    <h3>التعليق الصوتي</h3>
+                    <p>Voice Over</p>
+                  </div>
+                  <div class="team-card-check"><i data-lucide="check"></i></div>
+                </label>
+
+                <label class="team-card" tabindex="0" role="checkbox" aria-checked="false">
+                  <input type="checkbox" name="team" value="photo">
+                  <div class="team-card-icon photo"><i data-lucide="camera"></i></div>
+                  <div class="team-card-text">
+                    <h3>التصوير الفوتوغرافي</h3>
+                    <p>Photography</p>
+                  </div>
+                  <div class="team-card-check"><i data-lucide="check"></i></div>
+                </label>
+
+                <label class="team-card" tabindex="0" role="checkbox" aria-checked="false">
+                  <input type="checkbox" name="team" value="video">
+                  <div class="team-card-icon video"><i data-lucide="clapperboard"></i></div>
+                  <div class="team-card-text">
+                    <h3>مونتاج الفيديو</h3>
+                    <p>Video Editing</p>
+                  </div>
+                  <div class="team-card-check"><i data-lucide="check"></i></div>
+                </label>
+              </div>
+              <div class="field-error"><i data-lucide="alert-circle"></i> <span>يرجى اختيار الفريق</span></div>
+            </div>
+          </section>
+          <!-- Step 4: Specialized Questions (Conditional) -->
+          <section id="step-4" class="form-section" aria-label="الأسئلة التخصصية">
+            <div class="section-header">
+              <div class="section-icon green"><i data-lucide="award"></i></div>
+              <h2>الأسئلة التخصصية</h2>
+              <p>أجب على الأسئلة التالية المتعلقة بالفريق الذي اخترته لمساعدتنا في تقييم مهاراتك.</p>
+            </div>
+
+            <!-- Content Writing Fields -->
+            <div id="fields-content" class="conditional-fields hidden">
+              <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700;color:var(--color-primary);margin-bottom:var(--space-6);display:flex;align-items:center;gap:var(--space-2);"><i data-lucide="pen-tool" style="width:20px;height:20px;"></i> أسئلة فريق صناعة المحتوى</h3>
+              <div class="field-group">
+                <label class="field-label" for="content-portfolio"><span class="required">*</span> أرفق رابطاً لنماذج من
+                  كتاباتك السابقة<span class="hint">منشورات، مقالات، سيناريو — Google Drive, Medium, أو أي
+                    منصة</span></label>
+                <input type="url" id="content-portfolio" name="content_portfolio" class="input-base"
+                  placeholder="https://..." required dir="ltr" style="text-align:right">
+                <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="content-challenge"><span class="required">*</span> تحدي سريع: تخيل أننا
+                  نطلق حملة عاجلة للتبرع بالدم؛ اكتب منشوراً قصيراً ومؤثراً لمنصات التواصل الاجتماعي يحث الشباب على
+                  التبرع في 3 أسطر فقط.<span class="hint">أظهر لنا إبداعك في الكتابة المؤثرة!</span></label>
+                <textarea id="content-challenge" name="content_challenge" class="input-base"
+                  placeholder="اكتب منشورك هنا في 3 أسطر..." required></textarea>
+                <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+              </div>
+            </div>
+
+            <!-- Graphic Design Fields -->
+            <div id="fields-design" class="conditional-fields hidden">
+              <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700;color:var(--color-primary);margin-bottom:var(--space-6);display:flex;align-items:center;gap:var(--space-2);"><i data-lucide="palette" style="width:20px;height:20px;"></i> أسئلة فريق التصميم الجرافيكي</h3>
+              <div class="field-group">
+                <label class="field-label" for="design-portfolio"><span class="required">*</span> أرفق رابط معرض
+                  أعمالك<span class="hint">Behance, Dribbble, Google Drive</span></label>
+                <input type="url" id="design-portfolio" name="design_portfolio" class="input-base"
+                  placeholder="https://behance.net/..." required dir="ltr" style="text-align:right">
+                <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="design-tools"><span class="required">*</span> ما هي البرامج التي تتقنها
+                  وتعمل عليها باحترافية؟</label>
+                <input type="text" id="design-tools" name="design_tools" class="input-base"
+                  placeholder="مثال: Adobe Photoshop, Illustrator, Figma..." required>
+                <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+              </div>
+              <div class="field-group">
+                <label class="field-label"><span class="required">*</span> هل لديك القدرة والالتزام بالعمل وفق هوية
+                  بصرية موحدة ومحددة مسبقاً (Brand Guidelines)؟</label>
+                <div class="yes-no-group" data-required="true">
+                  <label class="yes-no-option"><input type="radio" name="design_brand" value="yes"> نعم</label>
+                  <label class="yes-no-option"><input type="radio" name="design_brand" value="no"> لا</label>
+                </div>
+                <div class="field-error"><i data-lucide="alert-circle"></i> <span>يرجى اختيار أحد الخيارات</span></div>
+              </div>
+            </div>
+            <!-- Voice Over Fields -->
+            <div id="fields-voice" class="conditional-fields hidden">
+              <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700;color:var(--color-primary);margin-bottom:var(--space-6);display:flex;align-items:center;gap:var(--space-2);"><i data-lucide="mic" style="width:20px;height:20px;"></i> أسئلة فريق التعليق الصوتي</h3>
+              <div class="field-group">
+                <label class="field-label" for="voice-sample"><span class="required">*</span> أرفق رابطاً لعينة صوتية
+                  قصيرة لا تتعدى دقيقة بصوتك<span class="hint">بالفصحى أو عامية بيضاء ملائمة للمحتوى الإنساني — Google
+                    Drive, SoundCloud</span></label>
+                <input type="url" id="voice-sample" name="voice_sample" class="input-base" placeholder="https://..."
+                  required dir="ltr" style="text-align:right">
+                <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+              </div>
+              <div class="field-group">
+                <label class="field-label"><span class="required">*</span> ما هي الخامة الصوتية التي ترى نفسك متميزاً
+                  فيها؟</label>
+                <div class="radio-group" data-required="true">
+                  <label class="radio-option">
+                    <input type="radio" name="voice_type" value="documentary">
+                    <span class="option-text">وثائقي / سردي</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="voice_type" value="energetic">
+                    <span class="option-text">حماسي / إعلاني</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="voice_type" value="warm">
+                    <span class="option-text">قصصي دافئ</span>
+                  </label>
+                </div>
+                <div class="field-error"><i data-lucide="alert-circle"></i> <span>يرجى اختيار أحد الخيارات</span></div>
+              </div>
+            </div>
+
+            <!-- Photography Fields -->
+            <div id="fields-photo" class="conditional-fields hidden">
+              <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700;color:var(--color-primary);margin-bottom:var(--space-6);display:flex;align-items:center;gap:var(--space-2);"><i data-lucide="camera" style="width:20px;height:20px;"></i> أسئلة فريق التصوير الفوتوغرافي</h3>
+              <div class="field-group">
+                <label class="field-label" for="photo-portfolio"><span class="required">*</span> أرفق رابطاً لأبرز
+                  لقطاتك<span class="hint">خاصة تصوير الفعاليات الحية أو البورتريه — Google Drive, Instagram,
+                    500px</span></label>
+                <input type="url" id="photo-portfolio" name="photo_portfolio" class="input-base"
+                  placeholder="https://..." required dir="ltr" style="text-align:right">
+                <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="photo-equipment"><span class="required">*</span> ما هي المعدات
+                  والكاميرات التي تمتلكها ويمكنك استخدامها في التغطيات الميدانية؟</label>
+                <input type="text" id="photo-equipment" name="photo_equipment" class="input-base"
+                  placeholder="مثال: Canon EOS R5, عدسة 70-200mm..." required>
+                <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+              </div>
+              <div class="field-group">
+                <label class="field-label"><span class="required">*</span> هل لديك استعداد للتصوير الميداني في ظروف جوية
+                  أو بيئية مختلفة ومتقلبة؟</label>
+                <div class="yes-no-group" data-required="true">
+                  <label class="yes-no-option"><input type="radio" name="photo_field" value="yes"> نعم</label>
+                  <label class="yes-no-option"><input type="radio" name="photo_field" value="no"> لا</label>
+                </div>
+                <div class="field-error"><i data-lucide="alert-circle"></i> <span>يرجى اختيار أحد الخيارات</span></div>
+              </div>
+            </div>
+            <!-- Video Editing Fields -->
+            <div id="fields-video" class="conditional-fields hidden">
+              <h3 style="font-family:var(--font-heading);font-size:var(--text-lg);font-weight:700;color:var(--color-primary);margin-bottom:var(--space-6);display:flex;align-items:center;gap:var(--space-2);"><i data-lucide="clapperboard" style="width:20px;height:20px;"></i> أسئلة فريق مونتاج الفيديو</h3>
+              <div class="field-group">
+                <label class="field-label" for="video-portfolio"><span class="required">*</span> أرفق روابط لفيديوهات
+                  قمت بمونتاجها سابقاً<span class="hint">يرجى تحديد دورك في الفيديو بدقة — YouTube, Vimeo, Google
+                    Drive</span></label>
+                <input type="url" id="video-portfolio" name="video_portfolio" class="input-base"
+                  placeholder="https://..." required dir="ltr" style="text-align:right">
+                <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="video-tools"><span class="required">*</span> ما هي برامج المونتاج التي
+                  تستخدمها باحترافية؟</label>
+                <input type="text" id="video-tools" name="video_tools" class="input-base"
+                  placeholder="مثال: Adobe Premiere Pro, DaVinci Resolve, After Effects..." required>
+                <div class="field-error"><i data-lucide="alert-circle"></i> <span>هذا الحقل مطلوب</span></div>
+              </div>
+              <div class="field-group">
+                <label class="field-label"><span class="required">*</span> هل لديك مهارة في إضافة المؤثرات البصرية
+                  البسيطة والمؤثرات الصوتية المناسبة للمحتوى الإنساني؟</label>
+                <div class="yes-no-group" data-required="true">
+                  <label class="yes-no-option"><input type="radio" name="video_effects" value="yes"> نعم</label>
+                  <label class="yes-no-option"><input type="radio" name="video_effects" value="no"> لا</label>
+                </div>
+                <div class="field-error"><i data-lucide="alert-circle"></i> <span>يرجى اختيار أحد الخيارات</span></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Navigation -->
+          <div class="form-nav">
+            <button type="button" id="btn-prev" class="btn btn-secondary hidden" aria-label="الخطوة السابقة">
+              <i data-lucide="arrow-right"></i>
+              <span>السابق</span>
+            </button>
+            <div></div>
+            <button type="button" id="btn-next" class="btn btn-primary" aria-label="الخطوة التالية">
+              <span>التالي</span>
+              <i data-lucide="arrow-left"></i>
+            </button>
+            <button type="submit" id="btn-submit" class="btn btn-primary btn-submit hidden"
+              aria-label="إرسال الاستمارة">
+              <span class="btn-text">إرسال الاستمارة</span>
+              <i data-lucide="send"></i>
+            </button>
+          </div>
+        </div><!-- /.form-card -->
+      </form>
+      <!-- Success Page -->
+      <div id="success-page" class="success-page">
+        <div class="success-icon-wrap">
+          <i data-lucide="check-circle-2"></i>
+        </div>
+        <h2>شكراً لك! تم استلام طلبك بنجاح 🎉</h2>
+        <p class="success-msg">إن شغفك ورغبتك في تقديم وقتك لخدمة الإنسانية هما الخطوة الأولى لصناعة التغيير. سيقوم فريق
+          تقييم الميديا بمراجعة طلبك ومعرض أعمالك بعناية، وفي حال قبولك سيتم التواصل معك عبر الواتساب في أقرب وقت.</p>
+        <div class="success-details">
+          <i data-lucide="message-circle"></i>
+          <span>سيتم التواصل معك عبر الواتساب على الرقم الذي أدخلته</span>
+        </div>
+      </div>
+    </main>
+
+    <footer class="form-footer">
+      <p>الهلال الأحمر المصري بالمنوفية — فريق الميديا © 2026. جميع الحقوق محفوظة.</p>
+    </footer>
+  </div><!-- /.page-wrapper -->
+  <script>
+    (function () {
+      'use strict';
+
+      let currentStep = 1;
+      const totalSteps = 4;
+      let selectedTeams = new Set();
+
+      const formCard = document.querySelector('.form-card');
+      const sections = document.querySelectorAll('.form-section');
+      const stepIndicators = document.querySelectorAll('.step-indicator');
+      const stepLines = document.querySelectorAll('.step-line');
+      const btnNext = document.getElementById('btn-next');
+      const btnPrev = document.getElementById('btn-prev');
+      const btnSubmit = document.getElementById('btn-submit');
+      const successPage = document.getElementById('success-page');
+
+      function init() {
+        setupTeamCards();
+        setupRadioOptions();
+        setupYesNoOptions();
+        setupNavigation();
+        setupFormValidation();
+        updateProgress();
+        lucide.createIcons();
+      }
+
+      function setupTeamCards() {
+        document.querySelectorAll('.team-card').forEach(card => {
+          const checkbox = card.querySelector('input[type="checkbox"]');
+          
+          // Prevent the label's default behavior to avoid double-toggle
+          card.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            checkbox.checked = !checkbox.checked;
+            
+            if (checkbox.checked) {
+              card.classList.add('selected');
+              card.setAttribute('aria-checked', 'true');
+              selectedTeams.add(checkbox.value);
+            } else {
+              card.classList.remove('selected');
+              card.setAttribute('aria-checked', 'false');
+              selectedTeams.delete(checkbox.value);
+            }
+            
+            showConditionalFields();
+            clearFieldError(card.closest('.field-group'));
+            lucide.createIcons();
+          });
+        });
+      }
+
+      function setupRadioOptions() {
+        document.querySelectorAll('.radio-option').forEach(option => {
+          option.addEventListener('click', () => {
+            const group = option.closest('.radio-group');
+            group.querySelectorAll('.radio-option').forEach(o => o.classList.remove('selected'));
+            option.classList.add('selected');
+            option.querySelector('input[type="radio"]').checked = true;
+            clearFieldError(option.closest('.field-group'));
+          });
+        });
+      }
+
+      function setupYesNoOptions() {
+        document.querySelectorAll('.yes-no-option').forEach(option => {
+          option.addEventListener('click', () => {
+            const group = option.closest('.yes-no-group');
+            group.querySelectorAll('.yes-no-option').forEach(o => o.classList.remove('selected'));
+            option.classList.add('selected');
+            option.querySelector('input[type="radio"]').checked = true;
+            clearFieldError(option.closest('.field-group'));
+          });
+        });
+      }
+      function showConditionalFields() {
+        document.querySelectorAll('.conditional-fields').forEach(el => {
+          el.classList.add('hidden');
+          el.querySelectorAll('[required]').forEach(input => {
+            input.dataset.wasRequired = 'true';
+            input.removeAttribute('required');
+          });
+        });
+        
+        selectedTeams.forEach(team => {
+          const target = document.getElementById('fields-' + team);
+          if (target) {
+            target.classList.remove('hidden');
+            target.querySelectorAll('[data-was-required]').forEach(input => {
+              input.setAttribute('required', '');
+            });
+          }
+        });
+      }
+
+      function setupNavigation() {
+        btnNext.addEventListener('click', () => {
+          if (validateStep(currentStep)) {
+            currentStep++;
+            updateProgress();
+            showStep(currentStep);
+            scrollToForm();
+          }
+        });
+        btnPrev.addEventListener('click', () => {
+          currentStep--;
+          updateProgress();
+          showStep(currentStep);
+          scrollToForm();
+        });
+        btnSubmit.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (validateStep(currentStep)) submitForm();
+        });
+      }
+
+      function showStep(step) {
+        sections.forEach(s => s.classList.remove('active'));
+        const target = document.getElementById('step-' + step);
+        if (target) {
+          target.classList.add('active');
+          // Re-init lucide icons for the new section
+          lucide.createIcons();
+        }
+        btnPrev.classList.toggle('hidden', step === 1);
+        if (step === totalSteps) {
+          btnNext.classList.add('hidden');
+          btnSubmit.classList.remove('hidden');
+        } else {
+          btnNext.classList.remove('hidden');
+          btnSubmit.classList.add('hidden');
+        }
+      }
+
+      function updateProgress() {
+        stepIndicators.forEach((indicator, index) => {
+          const stepNum = index + 1;
+          indicator.classList.remove('active', 'completed');
+          const circle = indicator.querySelector('.step-circle');
+          if (stepNum === currentStep) {
+            indicator.classList.add('active');
+            circle.innerHTML = stepNum;
+          } else if (stepNum < currentStep) {
+            indicator.classList.add('completed');
+            circle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+          } else {
+            circle.innerHTML = stepNum;
+          }
+        });
+        stepLines.forEach((line, index) => {
+          line.classList.toggle('completed', index + 1 < currentStep);
+        });
+      }
+
+      function scrollToForm() {
+        const el = document.querySelector('.progress-bar-wrapper');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      function setupFormValidation() {
+        document.querySelectorAll('.input-base').forEach(input => {
+          input.addEventListener('blur', () => {
+            if (input.hasAttribute('required') && !input.value.trim()) {
+              showFieldError(input.closest('.field-group'), 'هذا الحقل مطلوب');
+            } else if (input.type === 'email' && input.value && !isValidEmail(input.value)) {
+              showFieldError(input.closest('.field-group'), 'يرجى إدخال بريد إلكتروني صحيح');
+            } else if (input.type === 'url' && input.value && !isValidURL(input.value)) {
+              showFieldError(input.closest('.field-group'), 'يرجى إدخال رابط صحيح');
+            } else {
+              clearFieldError(input.closest('.field-group'));
+            }
+          });
+          input.addEventListener('input', () => {
+            const fg = input.closest('.field-group');
+            if (fg && fg.querySelector('.field-error.visible')) clearFieldError(fg);
+          });
+        });
+      }
+
+      function validateStep(step) {
+        const section = document.getElementById('step-' + step);
+        if (!section) return true;
+        let isValid = true;
+
+        // Validate visible text inputs
+        section.querySelectorAll('.input-base[required]').forEach(input => {
+          // Skip inputs inside hidden conditional fields
+          const conditionalParent = input.closest('.conditional-fields');
+          if (conditionalParent && conditionalParent.classList.contains('hidden')) return;
+
+          if (!input.value.trim()) {
+            showFieldError(input.closest('.field-group'), 'هذا الحقل مطلوب');
+            isValid = false;
+          } else if (input.type === 'email' && !isValidEmail(input.value)) {
+            showFieldError(input.closest('.field-group'), 'يرجى إدخال بريد إلكتروني صحيح');
+            isValid = false;
+          } else if (input.type === 'url' && !isValidURL(input.value)) {
+            showFieldError(input.closest('.field-group'), 'يرجى إدخال رابط صحيح يبدأ بـ https://');
+            isValid = false;
+          } else if (input.type === 'number') {
+            const val = parseInt(input.value);
+            if (isNaN(val) || val < 15 || val > 80) {
+              showFieldError(input.closest('.field-group'), 'يرجى إدخال سن صحيح (15-80)');
+              isValid = false;
+            }
+          }
+        });
+
+        // Validate radio groups
+        section.querySelectorAll('.radio-group[data-required]').forEach(group => {
+          const conditionalParent = group.closest('.conditional-fields');
+          if (conditionalParent && conditionalParent.classList.contains('hidden')) return;
+          if (!group.querySelector('input[type="radio"]:checked')) {
+            showFieldError(group.closest('.field-group'), 'يرجى اختيار أحد الخيارات');
+            isValid = false;
+          }
+        });
+
+        // Validate team selection (step 3)
+        if (step === 3 && selectedTeams.size === 0) {
+          const fg = document.querySelector('.team-grid').closest('.field-group');
+          showFieldError(fg, 'يرجى اختيار فريق واحد على الأقل للمتابعة');
+          isValid = false;
+        }
+
+        // Validate yes/no groups
+        section.querySelectorAll('.yes-no-group[data-required]').forEach(group => {
+          const conditionalParent = group.closest('.conditional-fields');
+          if (conditionalParent && conditionalParent.classList.contains('hidden')) return;
+          if (!group.querySelector('input[type="radio"]:checked')) {
+            showFieldError(group.closest('.field-group'), 'يرجى اختيار أحد الخيارات');
+            isValid = false;
+          }
+        });
+
+        if (!isValid) {
+          formCard.classList.add('shake');
+          setTimeout(() => formCard.classList.remove('shake'), 400);
+          const firstErr = section.querySelector('.field-error.visible');
+          if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        return isValid;
+      }
+      function showFieldError(fieldGroup, message) {
+        if (!fieldGroup) return;
+        const errorEl = fieldGroup.querySelector('.field-error');
+        const input = fieldGroup.querySelector('.input-base');
+        if (errorEl) {
+          const span = errorEl.querySelector('span');
+          if (span) span.textContent = message;
+          errorEl.classList.add('visible');
+        }
+        if (input) input.classList.add('error');
+      }
+
+      function clearFieldError(fieldGroup) {
+        if (!fieldGroup) return;
+        const errorEl = fieldGroup.querySelector('.field-error');
+        const input = fieldGroup.querySelector('.input-base');
+        if (errorEl) errorEl.classList.remove('visible');
+        if (input) input.classList.remove('error');
+      }
+
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function isValidURL(url) {
+        try { new URL(url); return true; } catch { return /^https?:\/\/.+/.test(url); }
+      }
+
+      function submitForm() {
+        btnSubmit.classList.add('btn-loading');
+        btnSubmit.disabled = true;
+
+        const form = document.getElementById('volunteer-form');
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        
+        // Handle multiple selected teams
+        const teams = formData.getAll('team');
+        data.teams = teams.join('، ');
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwPgVB7BimQNGM8THXKPjsupXpWAIjQGG7sIdKtBk31HN_ABU5HdImGieBnbW3dXHxXQA/exec';
+
+        fetch(scriptURL, {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+          }
+        })
+        .then(response => response.json())
+        .then(result => {
+          if (result.result === 'success') {
+            formCard.classList.add('hidden');
+            document.querySelector('.form-nav').classList.add('hidden');
+            document.querySelector('.progress-bar-wrapper').classList.add('hidden');
+            successPage.classList.add('active');
+            scrollToForm();
+            lucide.createIcons();
+            createCelebration();
+          } else {
+            alert('حدث خطأ أثناء الإرسال: ' + result.message);
+            btnSubmit.classList.remove('btn-loading');
+            btnSubmit.disabled = false;
+          }
+        })
+        .catch(error => {
+          console.error('Error!', error.message);
+          alert('تعذر الاتصال بالخادم. يرجى المحاولة مرة أخرى لاحقاً.');
+          btnSubmit.classList.remove('btn-loading');
+          btnSubmit.disabled = false;
+        });
+      }
+
+      function createCelebration() {
+        const colors = ['#E3000F', '#D4634A', '#16803C', '#F59E0B', '#2563EB', '#7C3AED'];
+        const container = document.querySelector('.form-container');
+        for (let i = 0; i < 40; i++) {
+          const p = document.createElement('div');
+          const size = Math.random() * 8 + 4;
+          p.style.cssText = 'position:absolute;width:' + size + 'px;height:' + size + 'px;background:' + colors[Math.floor(Math.random() * colors.length)] + ';border-radius:' + (Math.random() > 0.5 ? '50%' : '2px') + ';top:0;left:' + Math.random() * 100 + '%;opacity:1;pointer-events:none;z-index:10;';
+          container.appendChild(p);
+          p.animate([
+            { transform: 'translateY(0) translateX(0) rotate(0deg)', opacity: 1 },
+            { transform: 'translateY(' + (Math.random() * 300 + 200) + 'px) translateX(' + ((Math.random() - 0.5) * 200) + 'px) rotate(' + (Math.random() * 720) + 'deg)', opacity: 0 }
+          ], { duration: Math.random() * 1500 + 1000, easing: 'cubic-bezier(0.25,0.46,0.45,0.94)', fill: 'forwards' }).onfinish = () => p.remove();
+        }
+      }
+
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+      else init();
+    })();
+  </script>
+</body>
+
+</html>
