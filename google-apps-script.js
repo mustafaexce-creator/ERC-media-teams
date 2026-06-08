@@ -15,10 +15,11 @@ function setupHeaders() {
     'السن',
     'رقم الهاتف',
     'الفرق المختارة',
-    'سبق العمل التطوعي',
+    'لماذا اخترت الانضمام',
+    'مشروع أثر فيك',
     'ساعات الالتزام الأسبوعية',
-    'هل يمكن الحضور للتغطيات',
-    'ملاحظات إضافية',
+    'المرونة في أوقات الطوارئ',
+    'الالتزامات التطوعية الأخرى',
     'رابط نماذج المحتوى',
     'تحدي المحتوى',
     'رابط معرض التصميم',
@@ -31,7 +32,7 @@ function setupHeaders() {
     'استعداد للتصوير الميداني',
     'رابط فيديوهات',
     'أدوات المونتاج',
-    'القدرة على إنتاج ريلز'
+    'خبرة في المؤثرات البصرية'
   ];
   
   // Write headers to Row 1
@@ -53,7 +54,7 @@ function setupHeaders() {
   // Freeze header row
   sheet.setFrozenRows(1);
   
-  SpreadsheetApp.getActiveSpreadsheet().toast('✅ تم إنشاء الأعمدة بنجاح!', 'جاهز', 5);
+  SpreadsheetApp.getActiveSpreadsheet().toast('✅ تم إنشاء الأعمدة الجديدة بنجاح!', 'جاهز', 5);
 }
 
 // ============================================
@@ -65,29 +66,30 @@ function doPost(e) {
     var data = JSON.parse(e.postData.contents);
     
     sheet.appendRow([
-      new Date(),                          // A: Timestamp
-      data.full_name || '',                // B: الاسم الرباعي
-      data.member_id || '',                // C: رقم العضوية
-      data.age || '',                      // D: السن
-      data.phone || '',                    // E: رقم الهاتف
-      data.teams || '',                    // F: الفرق المختارة
-      data.previous_volunteer || '',       // G: سبق العمل التطوعي
-      data.hours_commitment || '',         // H: ساعات الالتزام
-      data.can_attend || '',               // I: هل يمكن الحضور
-      data.extra_notes || '',              // J: ملاحظات إضافية
-      data.content_portfolio || '',        // K: رابط نماذج المحتوى
-      data.content_challenge || '',        // L: تحدي المحتوى
-      data.design_portfolio || '',         // M: رابط معرض التصميم
-      data.design_tools || '',             // N: أدوات التصميم
-      data.design_brand || '',             // O: التزام بالهوية البصرية
-      data.voice_sample || '',             // P: عينة صوتية
-      data.voice_type || '',               // Q: نوع الصوت
-      data.photo_portfolio || '',          // R: رابط صور
-      data.photo_equipment || '',          // S: معدات التصوير
-      data.photo_field || '',              // T: استعداد ميداني
-      data.video_portfolio || '',          // U: رابط فيديو
-      data.video_tools || '',              // V: أدوات المونتاج
-      data.video_reels || ''               // W: القدرة على إنتاج ريلز
+      new Date(),                          // 1: Timestamp
+      data.full_name || '',                // 2: الاسم الرباعي
+      data.member_id || '',                // 3: رقم العضوية
+      data.age || '',                      // 4: السن
+      data.phone || '',                    // 5: رقم الهاتف
+      data.teams || '',                    // 6: الفرق المختارة
+      data.why_join || '',                 // 7: لماذا اخترت الانضمام
+      data.inspiring_project || '',        // 8: مشروع أثر فيك
+      data.weekly_hours || '',             // 9: ساعات الالتزام الأسبوعية
+      data.flexibility || '',              // 10: المرونة في أوقات الطوارئ
+      data.other_commitments || '',        // 11: الالتزامات التطوعية الأخرى
+      data.content_portfolio || '',        // 12: رابط نماذج المحتوى
+      data.content_challenge || '',        // 13: تحدي المحتوى
+      data.design_portfolio || '',         // 14: رابط معرض التصميم
+      data.design_tools || '',             // 15: أدوات التصميم
+      data.design_brand || '',             // 16: التزام بالهوية البصرية
+      data.voice_sample || '',             // 17: رابط عينة صوتية
+      data.voice_type || '',               // 18: نوع الصوت
+      data.photo_portfolio || '',          // 19: رابط صور
+      data.photo_equipment || '',          // 20: معدات التصوير
+      data.photo_field || '',              // 21: استعداد ميداني
+      data.video_portfolio || '',          // 22: رابط فيديوهات
+      data.video_tools || '',              // 23: أدوات المونتاج
+      data.video_effects || ''             // 24: خبرة في المؤثرات البصرية
     ]);
     
     return ContentService
